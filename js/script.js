@@ -11,15 +11,40 @@
 //  di volte che l’utente ha inserito un numero consentito.
 
 
-var numeriPc = [];
-var numeriUtente = [];
+var numeriPc = []; //array dei 16 numeri casuali
+var numeriUtente = []; //array dei numeri inseriti dall'utente
 
-for (var i = 0; i < 5; i++) {
-  numeriPc[i] = Math.floor((Math.random() * 100) + 1);
+// Prove con for
+// for (var i = 0; i < 5; i++) {
+//   numeriPc[i] = Math.floor((Math.random() * 100) + 1);
+// }
+//
+// for (var i = 0; i < 5; i++) {
+//   numeriUtente.push(parseInt(prompt("Inserisci un numero compreso tra 1 a 100")));
+// }
+
+
+while (numeriPc.length < 16) { // ciclo while, fino a quando la lunghezza di numeriPc è minore di 16
+  var x = Math.floor((Math.random() * 100) + 1); // generazione numero casuale
+
+  if (numeriPc.includes(x)==false) { //se includes() è falso pusha la x nell'array
+    numeriPc.push(x);
+  }
 }
 
-for (var i = 0; i < 5; i++) {
-  numeriUtente.push(parseInt(prompt("Inserisci un numero compreso tra 1 a 100")));
+while (numeriUtente.length < 8) {
+  var y = parseInt(prompt("Inserici un numero tra 1 e 100"));
+
+  if (numeriUtente.includes(y)==true) {
+    alert("Non puoi inserire un numero già usato");
+  }else if (numeriUtente.includes(y)==false) {
+    numeriUtente.push(y);
+  }
+
+  // else if (y == numeriPc[i]) {
+  //   alert("Hai perso!");
+  // }
+
 }
 
 console.log(numeriPc);
