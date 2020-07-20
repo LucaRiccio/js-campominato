@@ -14,8 +14,13 @@
 var numeriPc = [];
 var numeriUtente = [];
 
-for (var i = 0; i < 16; i++) {
+for (var i = 0; i < 5; i++) {
   numeriPc[i] = Math.floor((Math.random() * 100) + 1);
 }
 
+for (var i = 0; i < 5; i++) {
+  numeriUtente.push(parseInt(prompt("Inserisci un numero compreso tra 1 a 100")));
+}
+
 console.log(numeriPc);
+console.log(numeriUtente);
